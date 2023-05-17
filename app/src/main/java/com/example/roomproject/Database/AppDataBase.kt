@@ -6,7 +6,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.roomproject.DAO.UsersDAO
 import com.example.roomproject.Entity.*
-import javax.security.auth.Subject
 
 @Database(entities = [User::class, Guruh::class, Marks::class, StudentGuruh::class, Subject::class, TeacherSubject::class], version = 1)
 abstract class AppDataBase: RoomDatabase() {
