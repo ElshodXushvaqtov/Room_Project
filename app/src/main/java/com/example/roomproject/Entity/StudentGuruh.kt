@@ -14,6 +14,6 @@ import androidx.room.PrimaryKey
 )
 data class StudentGuruh(
     @PrimaryKey(autoGenerate = true)
-    var student_id: Int,
+    var studentGuruh_id: Int,
     var guruh: Int
 )

@@ -20,7 +20,7 @@ interface UsersDAO {
     @Query(
         "select * from users where user_id = :id"
     )
-    fun getUsersById(id: Int):User
+    fun getUsersById(id: Int): User
 
     @Query(
         "select * from users where login = :login AND password = :password"

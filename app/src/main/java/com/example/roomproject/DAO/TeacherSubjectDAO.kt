@@ -16,6 +16,6 @@ interface TeacherSubjectDAO {
 
 
     @Query("select * from teacher_subjects where teacher_id = :id")
-    fun getTeacherSubjectById(id:Int): TeacherSubject
+    fun getTeacherSubjectById(id: Int): TeacherSubject
 
 }

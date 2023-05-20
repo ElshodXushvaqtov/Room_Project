@@ -5,7 +5,8 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 
-@Entity(tableName = "teacher_subjects",
+@Entity(
+    tableName = "teacher_subjects",
     foreignKeys = [
 
         ForeignKey(

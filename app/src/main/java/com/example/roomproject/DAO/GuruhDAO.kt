@@ -16,8 +16,8 @@ interface GuruhDAO {
     fun deleteGuruh(guruh: Guruh)
 
     @Query("select * from guruhlar")
-    fun getAllGuruh():List<Guruh>
+    fun getAllGuruh(): List<Guruh>
 
     @Query("select * from guruhlar where guruh_id = :id")
-    fun getGuruhById(id:Int): Guruh
+    fun getGuruhById(id: Int): Guruh
 }

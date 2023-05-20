@@ -21,7 +21,7 @@ import androidx.room.PrimaryKey
 
 data class Marks(
     @PrimaryKey(autoGenerate = true)
-    var marks_id:Int=0,
+    var marks_id: Int = 0,
     var teacherSubject: Int,
     var studentGuruh: Int
 )

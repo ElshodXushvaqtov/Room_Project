@@ -26,26 +26,31 @@ class RegistrationFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-val appDataBase:AppDataBase by lazy {
-    AppDataBase.getInstance(requireContext())
-}
+
+    val appDataBase: AppDataBase by lazy {
+        AppDataBase.getInstance(requireContext())
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentRegistrationBinding.inflate(inflater, container, false)
         binding.save.setOnClickListener {
-            Toast.makeText(requireContext(),"T", Toast.LENGTH_SHORT).show()
-            appDataBase.getUsersDao().addUser(
-                User(
-                    userName = binding.fullname.text.toString(),
-                    login = binding.name.text.toString(),
-                    password = binding.pass.text.toString(),
-                    role = binding.role.text.toString()
-                )
-            )
-            findNavController().navigate(R.id.action_registrationFragment_to_loginFragment)
-        }
+            var users = appDataBase.getUsersDao().getAllUsers()
+
+                    appDataBase.getUsersDao().addUser(
+                        User(
+                            userName = binding.fullname.text.toString(),
+                            login = binding.name.text.toString(),
+                            password = binding.pass.text.toString(),
+                            role = binding.role.text.toString()
+                        )
+                    )
+                    findNavController().navigate(R.id.action_registrationFragment_to_loginFragment)
+                    Toast.makeText(requireContext(), "New user added", Toast.LENGTH_SHORT).show()
+            }
+
         return binding.root
     }
 

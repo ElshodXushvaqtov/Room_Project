@@ -15,8 +15,8 @@ interface SubjectDAO {
     fun deleteSubject(subject: Subject)
 
     @Query("select * from subjects")
-    fun getAllSubject():List<Subject>
+    fun getAllSubject(): List<Subject>
 
     @Query("select * from subjects where subject_id =:id")
-    fun getSubjectById(id:Int): Subject
+    fun getSubjectById(id: Int): Subject
 }
